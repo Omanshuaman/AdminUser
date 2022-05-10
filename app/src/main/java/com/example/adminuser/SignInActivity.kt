@@ -21,18 +21,18 @@ import com.google.firebase.database.FirebaseDatabase
 
 class SignInActivity : AppCompatActivity() {
 
-    var binding: ActivitySignInBinding? = null
-    var progressDialog: ProgressDialog? = null
-    var mAuth: FirebaseAuth? = null
-    var firebaseDatabase: FirebaseDatabase? = null
-    var mGoogleSignInClient: GoogleSignInClient? = null
+    private var binding: ActivitySignInBinding? = null
+    private var progressDialog: ProgressDialog? = null
+    private var mAuth: FirebaseAuth? = null
+    private var firebaseDatabase: FirebaseDatabase? = null
+    private var mGoogleSignInClient: GoogleSignInClient? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivitySignInBinding.inflate(layoutInflater);
-        setContentView(binding!!.root);
-        supportActionBar?.hide();
+        binding = ActivitySignInBinding.inflate(layoutInflater)
+        setContentView(binding!!.root)
+        supportActionBar?.hide()
 
         mAuth = FirebaseAuth.getInstance()
         firebaseDatabase = FirebaseDatabase.getInstance()
@@ -50,7 +50,8 @@ class SignInActivity : AppCompatActivity() {
 
 
         binding!!.btnSignIn.setOnClickListener {
-            if (binding!!.txtEmail.text.toString().isNotEmpty() && binding!!.txtPassword.text.toString()
+            if (binding!!.txtEmail.text.toString()
+                    .isNotEmpty() && binding!!.txtPassword.text.toString()
                     .isNotEmpty()
             ) {
                 progressDialog!!.show()
@@ -111,6 +112,7 @@ class SignInActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun firebaseAuthWithGoogle(account: GoogleSignInAccount) {
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         mAuth!!.signInWithCredential(credential)
