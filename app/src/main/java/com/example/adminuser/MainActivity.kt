@@ -10,7 +10,6 @@ import android.webkit.MimeTypeMap
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.adminuser.Models.Upload
-import com.example.adminuser.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -18,7 +17,6 @@ import com.google.firebase.storage.FirebaseStorage
 
 class MainActivity : AppCompatActivity() {
 
-    private var binding: ActivityMainBinding? = null
     private var mAuth: FirebaseAuth? = null
 
     //widgets
@@ -27,6 +25,10 @@ class MainActivity : AppCompatActivity() {
     private var imageView: ImageView? = null
     private var progressBar: ProgressBar? = null
     private var mEditTextFileName: EditText? = null
+    private var placePicker: Button? = null
+    private var langlat: TextView? = null
+    private var PLACE_PICKER_REQUEST =1
+
     val userid = FirebaseAuth.getInstance().currentUser!!.uid
 
     //vars
@@ -37,17 +39,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding!!.root)
+        setContentView(R.layout.activity_main)
 
         uploadBtn = findViewById(R.id.upload_btn)
         showAllBtn = findViewById(R.id.showall_btn)
         progressBar = findViewById(R.id.progressBar)
         imageView = findViewById(R.id.imageView)
         mEditTextFileName = findViewById(R.id.Name)
+
         progressBar!!.visibility = View.INVISIBLE
         mAuth = FirebaseAuth.getInstance()
-
 
         imageView!!.setOnClickListener {
             val galleryIntent = Intent()
