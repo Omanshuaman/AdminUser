@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.adminuser.Models.Users
+import com.example.adminuser.models.Users
 import com.example.adminuser.databinding.ActivitySignInBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -62,7 +62,7 @@ class SignInActivity : AppCompatActivity() {
                     .addOnCompleteListener { task ->
                         progressDialog!!.dismiss()
                         if (task.isSuccessful) {
-                            val intent = Intent(this@SignInActivity, PlacePicker::class.java)
+                            val intent = Intent(this@SignInActivity, MapsActivity::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(
@@ -78,7 +78,7 @@ class SignInActivity : AppCompatActivity() {
             }
         }
         if (mAuth!!.currentUser != null) {
-            val intent = Intent(this@SignInActivity, PlacePicker::class.java)
+            val intent = Intent(this@SignInActivity, MapsActivity::class.java)
             startActivity(intent)
         }
         binding!!.txtClickSignUp.setOnClickListener {

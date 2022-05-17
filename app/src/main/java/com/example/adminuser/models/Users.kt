@@ -1,4 +1,4 @@
-package com.example.adminuser.Models
+package com.example.adminuser.models
 
 class Users {
     var profilePic: String? = null

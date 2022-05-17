@@ -1,18 +1,26 @@
 package com.example.adminuser
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import com.example.adminuser.Models.Upload
+import com.adevinta.leku.LATITUDE
+import com.adevinta.leku.LONGITUDE
+import com.adevinta.leku.LocationPickerActivity
+import com.adevinta.leku.locale.SearchZoneRect
+import com.example.adminuser.models.Upload
+import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import java.lang.StringBuilder
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +35,14 @@ class MainActivity : AppCompatActivity() {
     private var mEditTextFileName: EditText? = null
     private var placePicker: Button? = null
     private var langlat: TextView? = null
-    private var PLACE_PICKER_REQUEST =1
+    private var PLACE_PICKER_REQUEST = 1
+
+    private var btnPicklocation: Button? = null
+    private var tvMylocation: TextView? = null
+    private val PLACE_PICKER_REQUEST2 = 999
+
+    private var latitude :String? = null
+    private var longitude :String? = null
 
     val userid = FirebaseAuth.getInstance().currentUser!!.uid
 
@@ -46,6 +61,8 @@ class MainActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBar)
         imageView = findViewById(R.id.imageView)
         mEditTextFileName = findViewById(R.id.Name)
+        btnPicklocation = findViewById(R.id.BtnPickLocation)
+        tvMylocation = findViewById(R.id.MyLocation)
 
         progressBar!!.visibility = View.INVISIBLE
         mAuth = FirebaseAuth.getInstance()
@@ -57,6 +74,10 @@ class MainActivity : AppCompatActivity() {
             startActivityForResult(galleryIntent, 2)
         }
 
+        btnPicklocation!!.setOnClickListener {
+            openPlacePicker()
+        }
+
         uploadBtn!!.setOnClickListener {
             if (imageUri != null) {
                 uploadToFirebase(imageUri!!)
@@ -64,9 +85,38 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Please Select Image", Toast.LENGTH_SHORT).show()
             }
         }
-        showAllBtn!!.setOnClickListener{
+        showAllBtn!!.setOnClickListener {
             openImagesActivity()
         }
+    }
+
+    private fun openPlacePicker() {
+        val locationPickerIntent = LocationPickerActivity.Builder()
+            .withLocation(41.4036299, 2.1743558)
+            .withGeolocApiKey("<PUT API KEY HERE>")
+            .withSearchZone("es_ES")
+            .withSearchZone(
+                SearchZoneRect(
+                    LatLng(26.525467, -18.910366),
+                    LatLng(43.906271, 5.394197)
+                )
+            )
+            .withDefaultLocaleSearchZone()
+            .shouldReturnOkOnBackPressed()
+            .withStreetHidden()
+            .withCityHidden()
+            .withZipCodeHidden()
+            .withSatelliteViewHidden()
+            //.withGooglePlacesEnabled()
+            .withGoogleTimeZoneEnabled()
+            .withVoiceSearchHidden()
+            .withUnnamedRoadHidden()
+            .withMapStyle(R.raw.map_style)
+            // .withSearchBarHidden()
+            .build(applicationContext)
+
+
+        startActivityForResult(locationPickerIntent, PLACE_PICKER_REQUEST2)
     }
 
     private fun openImagesActivity() {
@@ -80,7 +130,21 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
             imageUri = data.data
             imageView!!.setImageURI(imageUri)
-        }
+        } else
+            if (resultCode == Activity.RESULT_OK && data != null) {
+                Log.d("RESULT****", "OK")
+                if (requestCode == PLACE_PICKER_REQUEST2) {
+                    latitude = data.getDoubleExtra(LATITUDE, 0.0).toString()
+                    Log.d("LATITUDE****", latitude.toString())
+                    longitude = data.getDoubleExtra(LONGITUDE, 0.0).toString()
+                    Log.d("LONGITUDE****", longitude.toString())
+
+                    val sb = StringBuilder()
+                    sb.append("LATITUDE:").append(latitude).append("\n").append("LONGITUDE: ")
+                        .append(longitude)
+                    tvMylocation?.text = sb.toString()
+                }
+            }
     }
 
     private fun uploadToFirebase(uri: Uri) {
@@ -91,7 +155,8 @@ class MainActivity : AppCompatActivity() {
             )
         fileRef.putFile(uri).addOnSuccessListener {
             fileRef.downloadUrl.addOnSuccessListener { uri1: Uri ->
-                val model = Upload(mEditTextFileName!!.text.toString(), uri1.toString())
+                val model = Upload(mEditTextFileName!!.text.toString(), uri1.toString(),longitude,latitude)
+
                 val modelId = databaseReference.push().key
 
                 databaseReference.child("Image").child(userid).child(modelId!!)
