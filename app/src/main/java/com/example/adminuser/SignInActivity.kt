@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.adminuser.models.Users
 import com.example.adminuser.databinding.ActivitySignInBinding
+import com.example.adminuser.models.ModelUser
+import com.example.adminuser.models.Users
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -62,7 +63,7 @@ class SignInActivity : AppCompatActivity() {
                     .addOnCompleteListener { task ->
                         progressDialog!!.dismiss()
                         if (task.isSuccessful) {
-                            val intent = Intent(this@SignInActivity, MapsActivity::class.java)
+                            val intent = Intent(this@SignInActivity, DashboardActivity::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(
@@ -78,7 +79,7 @@ class SignInActivity : AppCompatActivity() {
             }
         }
         if (mAuth!!.currentUser != null) {
-            val intent = Intent(this@SignInActivity, MapsActivity::class.java)
+            val intent = Intent(this@SignInActivity, DashboardActivity::class.java)
             startActivity(intent)
         }
         binding!!.txtClickSignUp.setOnClickListener {
@@ -121,17 +122,52 @@ class SignInActivity : AppCompatActivity() {
             ) { task ->
                 if (task.isSuccessful) {
                     Log.w("SignIn", "signInWithCredential:success")
-                    val user = mAuth!!.currentUser
-                    val users = Users()
-                    users.userId = user!!.uid
-                    users.userName = user.displayName
-                    users.profilePic = user.photoUrl.toString()
-                    firebaseDatabase!!.reference.child("Users").child(user.uid).setValue(users)
-                    val intent = Intent(this@SignInActivity, MainActivity::class.java)
-                    startActivity(intent)
+
+                    // Sign in success, update UI with the signed-in user's information
+                    val user = mAuth!!.currentUser                    //if user is signing in first time then get and show user info from google account
+                    //Get user email and uid from auth
+                    val users = ModelUser()
+                    users.email = user!!.email
+                    users.uid = user.uid
+                    //When user is registered store user info in firebase realtime database too
+                    //using HashMap
+                    val hashMap: HashMap<Any, String?> = HashMap()
+                    //put info in hashmap
+                    hashMap["email"] = users.email
+                    hashMap["uid"] = users.uid
+                    hashMap["name"] = "" //will add later (e.g. edit profile)
+                    hashMap["image"] = "" //will add later (e.g. edit profile)
+                    hashMap["cover"] = "" //will add later (e.g. edit profile)
+                    //firebase database instance
+                    val database = FirebaseDatabase.getInstance()
+                    //path to store user data named "Users"
+                    val reference = database.getReference("Users")
+                    //put data within hashmap in database
+                    reference.child(user.uid).setValue(hashMap)
+
+                    //show user email in toast
+                    //show user email in toast
+                    Toast.makeText(this@SignInActivity, "" + user.email, Toast.LENGTH_SHORT)
+                        .show()
+                    //go to profile activity after logged in
+                    //go to profile activity after logged in
+                    startActivity(Intent(this@SignInActivity, DashboardActivity::class.java))
+                    finish()
+                    //updateUI(user);
+
+
+//                    val user = mAuth!!.currentUser
+//                    val users = Users()
+//                    users.userId = user!!.uid
+//                    users.userName = user.displayName
+//                    users.profilePic = user.photoUrl.toString()
+//                    firebaseDatabase!!.reference.child("Users").child(user.uid).setValue(users)
+//                    val intent = Intent(this@SignInActivity, DashboardActivity::class.java)
+//                    startActivity(intent)
                     Toast.makeText(this@SignInActivity, "Sign in with Google", Toast.LENGTH_SHORT)
                         .show()
                 } else {
+
                     Toast.makeText(this@SignInActivity, "Sorry error auth", Toast.LENGTH_SHORT)
                         .show()
                 }

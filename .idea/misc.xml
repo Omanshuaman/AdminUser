@@ -4,7 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/drawable/bg_receiver.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/drawable/bg_sender.xml" value="0.125" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/drawable/ic_baseline_add_photo_alternate_24.xml" value="0.146" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_group_chat.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_group_create.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_group_edit.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_group_info.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_group_participant_add.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_images.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_maps.xml" value="0.21105072463768115" />
@@ -12,10 +20,19 @@
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_show.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_group_chats.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_users.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/image_item.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/item.xml" value="0.22327898550724637" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/row_groupchat_left.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/row_groupchat_right.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/row_groupchats_list.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/row_participant_add.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/map_options.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/menu_nav.xml" value="0.2" />
       </map>
     </option>
   </component>

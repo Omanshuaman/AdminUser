@@ -25,7 +25,7 @@ class ImagesActivity : AppCompatActivity() {
         mRecyclerView!!.setHasFixedSize(true)
         mRecyclerView!!.layoutManager = LinearLayoutManager(this)
 
-         mUploads = ArrayList()
+        mUploads = ArrayList()
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("Just Photos")
         mDatabaseRef!!.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
