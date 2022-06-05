@@ -81,7 +81,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 TODO("Not yet implemented")
             }
 
-            fun onCancelled(firebaseError: FirebaseError?) {}
         })
 
     }

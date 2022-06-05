@@ -41,8 +41,8 @@ class MainActivity : AppCompatActivity() {
     private var tvMylocation: TextView? = null
     private val PLACE_PICKER_REQUEST2 = 999
 
-    private var latitude :String? = null
-    private var longitude :String? = null
+    private var latitude: String? = null
+    private var longitude: String? = null
 
     val userid = FirebaseAuth.getInstance().currentUser!!.uid
 
@@ -86,7 +86,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
         showAllBtn!!.setOnClickListener {
-            openImagesActivity()
+            val intent = Intent(this, GroupCreateActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -155,7 +156,12 @@ class MainActivity : AppCompatActivity() {
             )
         fileRef.putFile(uri).addOnSuccessListener {
             fileRef.downloadUrl.addOnSuccessListener { uri1: Uri ->
-                val model = Upload(mEditTextFileName!!.text.toString(), uri1.toString(),longitude,latitude)
+                val model = Upload(
+                    mEditTextFileName!!.text.toString(),
+                    uri1.toString(),
+                    longitude,
+                    latitude
+                )
 
                 val modelId = databaseReference.push().key
 
@@ -179,24 +185,4 @@ class MainActivity : AppCompatActivity() {
         return mime.getExtensionFromMimeType(cr.getType(mUri))
     }
 
-
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.settings -> Toast.makeText(this, "Setting is clicked", Toast.LENGTH_SHORT).show()
-            R.id.groupChat -> Toast.makeText(this, "Group Chat is Started", Toast.LENGTH_SHORT)
-                .show()
-            R.id.logout -> {
-                mAuth!!.signOut()
-                val intent = Intent(this@MainActivity, SignInActivity::class.java)
-                startActivity(intent)
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
 }

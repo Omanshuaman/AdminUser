@@ -8,6 +8,7 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.MenuItemCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.example.adminuser.adapters.AdapterGroupChatList
 import com.example.adminuser.models.ModelGroupChatList
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*

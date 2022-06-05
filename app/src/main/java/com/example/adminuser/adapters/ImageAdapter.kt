@@ -1,10 +1,11 @@
-package com.example.adminuser
+package com.example.adminuser.adapters
 
 import android.content.Context
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.adminuser.R
 import com.example.adminuser.models.Upload
 import com.squareup.picasso.Picasso
 
@@ -12,7 +13,7 @@ import com.squareup.picasso.Picasso
 class ImageAdapter(context: Context, uploads: List<Upload?>?) :
     RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
     private val mContext: Context = context
-    private val mUploads: List<Upload> = uploads as List<Upload>
+    private val mUploads: List<Upload?> = uploads as List<Upload?>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
         val v = LayoutInflater.from(mContext).inflate(R.layout.image_item, parent, false)
@@ -21,9 +22,9 @@ class ImageAdapter(context: Context, uploads: List<Upload?>?) :
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         val uploadCurrent = mUploads[position]
-        holder.textViewName.text = uploadCurrent.name
+        holder.textViewName.text = uploadCurrent?.name
         Picasso.get()
-            .load(uploadCurrent.imageUrl)
+            .load(uploadCurrent?.imageUrl)
             .fit()
             .centerCrop()
             .into(holder.imageView)

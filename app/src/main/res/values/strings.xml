@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AdminUser</string>
+    <string name="app_name">Tournament Sports</string>
     <string name="title_activity_maps">MapsActivity</string>
 
     <string name="normal_map">Normal Map</string>

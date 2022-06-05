@@ -1,4 +1,4 @@
-package com.example.adminuser
+package com.example.adminuser.adapters
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.adminuser.GroupChatActivity
+import com.example.adminuser.R
 import com.example.adminuser.models.ModelGroupChatList
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -119,11 +121,11 @@ class AdapterGroupChatList(
     inner class HolderGroupChatList(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
         //ui views
-         val groupIconIv: ImageView
+        val groupIconIv: ImageView
         val groupTitleTv: TextView
-         val nameTv: TextView
-         val messageTv: TextView
-         val timeTv: TextView
+        val nameTv: TextView
+        val messageTv: TextView
+        val timeTv: TextView
 
         init {
             groupIconIv = itemView.findViewById(R.id.groupIconIv)

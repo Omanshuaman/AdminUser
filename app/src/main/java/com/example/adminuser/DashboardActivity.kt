@@ -4,12 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Gravity
 import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.FragmentTransaction
 import com.example.adminuser.fragments.HomeFragment
+import com.example.adminuser.fragments.NotificationsFragment
 import com.example.adminuser.fragments.ProfileFragment
 import com.example.adminuser.fragments.UsersFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -31,7 +31,7 @@ class DashboardActivity : AppCompatActivity() {
         //init
         firebaseAuth = FirebaseAuth.getInstance()
         //bottom navigation
-        navigationView = findViewById(R.id.navigation);
+        navigationView = findViewById(R.id.navigation)
 
         navigationView!!.setOnNavigationItemSelectedListener(selectedListener)
 
@@ -74,7 +74,7 @@ class DashboardActivity : AppCompatActivity() {
                     return@OnNavigationItemSelectedListener true
                 }
                 R.id.nav_more-> {
-                    showMoreOptions();
+                    showMoreOptions()
                     return@OnNavigationItemSelectedListener true
                 }
             }

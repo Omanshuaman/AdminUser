@@ -8,7 +8,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.adminuser.databinding.ActivitySignInBinding
 import com.example.adminuser.models.ModelUser
-import com.example.adminuser.models.Users
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -63,7 +62,7 @@ class SignInActivity : AppCompatActivity() {
                     .addOnCompleteListener { task ->
                         progressDialog!!.dismiss()
                         if (task.isSuccessful) {
-                            val intent = Intent(this@SignInActivity, DashboardActivity::class.java)
+                            val intent = Intent(this@SignInActivity, MapsActivity::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(
@@ -79,7 +78,7 @@ class SignInActivity : AppCompatActivity() {
             }
         }
         if (mAuth!!.currentUser != null) {
-            val intent = Intent(this@SignInActivity, DashboardActivity::class.java)
+            val intent = Intent(this@SignInActivity, MapsActivity::class.java)
             startActivity(intent)
         }
         binding!!.txtClickSignUp.setOnClickListener {
@@ -146,10 +145,8 @@ class SignInActivity : AppCompatActivity() {
                     reference.child(user.uid).setValue(hashMap)
 
                     //show user email in toast
-                    //show user email in toast
                     Toast.makeText(this@SignInActivity, "" + user.email, Toast.LENGTH_SHORT)
                         .show()
-                    //go to profile activity after logged in
                     //go to profile activity after logged in
                     startActivity(Intent(this@SignInActivity, DashboardActivity::class.java))
                     finish()

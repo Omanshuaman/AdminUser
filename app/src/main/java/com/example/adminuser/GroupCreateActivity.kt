@@ -122,6 +122,8 @@ class GroupCreateActivity : AppCompatActivity() {
                         .show()
                 }
         }
+        val intent = Intent(this, DashboardActivity::class.java)
+        startActivity(intent)
     }
 
     private fun createGroup(

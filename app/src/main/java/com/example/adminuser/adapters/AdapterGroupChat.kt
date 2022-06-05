@@ -1,4 +1,4 @@
-package com.example.adminuser
+package com.example.adminuser.adapters
 
 import android.content.Context
 import android.text.format.DateFormat
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.adminuser.R
 import com.example.adminuser.models.ModelGroupChat
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
