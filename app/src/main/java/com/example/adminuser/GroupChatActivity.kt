@@ -267,7 +267,7 @@ class GroupChatActivity : AppCompatActivity() {
 
     private fun loadGroupMessages() {
         //init list
-        groupChatList = ArrayList<ModelGroupChat?>()
+        groupChatList = ArrayList()
         val ref = FirebaseDatabase.getInstance().getReference("Groups")
         ref.child(groupId!!).child("Messages")
             .addValueEventListener(object : ValueEventListener {

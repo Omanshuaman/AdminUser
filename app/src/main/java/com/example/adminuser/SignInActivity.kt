@@ -62,7 +62,7 @@ class SignInActivity : AppCompatActivity() {
                     .addOnCompleteListener { task ->
                         progressDialog!!.dismiss()
                         if (task.isSuccessful) {
-                            val intent = Intent(this@SignInActivity, MapsActivity::class.java)
+                            val intent = Intent(this@SignInActivity, DashboardActivity::class.java)
                             startActivity(intent)
                         } else {
                             Toast.makeText(
@@ -78,7 +78,7 @@ class SignInActivity : AppCompatActivity() {
             }
         }
         if (mAuth!!.currentUser != null) {
-            val intent = Intent(this@SignInActivity, MapsActivity::class.java)
+            val intent = Intent(this@SignInActivity, DashboardActivity::class.java)
             startActivity(intent)
         }
         binding!!.txtClickSignUp.setOnClickListener {

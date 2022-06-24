@@ -55,10 +55,10 @@ class DashboardActivity : AppCompatActivity() {
                     ft1.commit()
                     return@OnNavigationItemSelectedListener true
                 }
-                R.id.nav_profile -> {
+                R.id.trail_fragment -> {
                     //profile fragment transaction
                     actionBar?.title = "Profile" //change actionbar title
-                    val fragment2 = ProfileFragment()
+                    val fragment2 = TrailFragment()
                     val ft2: FragmentTransaction = supportFragmentManager.beginTransaction()
                     ft2.replace(R.id.content, fragment2, "")
                     ft2.commit()

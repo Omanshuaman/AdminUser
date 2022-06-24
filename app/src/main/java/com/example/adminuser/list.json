@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "0",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
+      "type": "Private Room",
+      "title": "Bright room in the heart of the city",
+      "bed": "2",
+      "bedroom": "3",
+      "oldPrice": "20",
+      "totalPrice": "120"
+    },
+    {
+      "id": "0",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
+      "type": "Private Room",
+      "title": "Bright room in the heart of the city",
+      "bed": "2",
+      "bedroom": "3",
+      "oldPrice": "20",
+      "totalPrice": "120"
+    },
+    {
+      "id": "0",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
+      "type": "Private Room",
+      "title": "Bright room in the heart of the city",
+      "bed": "2",
+      "bedroom": "3",
+      "oldPrice": "20",
+      "totalPrice": "120"
+    },
+    {
+      "id": "0",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/1.jpg",
+      "type": "Private Room",
+      "title": "Bright room in the heart of the city",
+      "bed": "2",
+      "bedroom": "3",
+      "oldPrice": "20",
+      "totalPrice": "120"
+    }
+  ]
+}
