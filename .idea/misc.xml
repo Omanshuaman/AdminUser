@@ -20,6 +20,7 @@
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_images.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_list.xml" value="0.264" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_main2.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_maps.xml" value="0.21105072463768115" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_place_picker.xml" value="0.264" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_show.xml" value="0.22327898550724637" />
@@ -28,6 +29,7 @@
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/bottom_sheet.xml" value="0.1441523118766999" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_group_chats.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_map.xml" value="0.16" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_notifications2.xml" value="0.20863616930312098" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_trail.xml" value="0.20521590423257802" />
@@ -35,11 +37,13 @@
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/image_item.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/item.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/list_item.xml" value="0.20521590423257802" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/place_layout.xml" value="0.264" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/recycler_list_item.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/row_groupchat_left.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/row_groupchat_right.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/row_groupchats_list.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/row_participant_add.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/test.xml" value="0.2" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/map_options.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/menu.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/menu_nav.xml" value="0.2" />

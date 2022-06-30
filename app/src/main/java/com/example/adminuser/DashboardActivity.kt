@@ -49,7 +49,7 @@ class DashboardActivity : AppCompatActivity() {
                 R.id.nav_home -> {
                     //home fragment transaction
                     actionBar?.title = "Home" //change actionbar title
-                    val fragment1 = HomeFragment()
+                    val fragment1 = MapFragment()
                     val ft1: FragmentTransaction = supportFragmentManager.beginTransaction()
                     ft1.replace(R.id.content, fragment1, "")
                     ft1.commit()

@@ -15,6 +15,7 @@ import com.adevinta.leku.LATITUDE
 import com.adevinta.leku.LONGITUDE
 import com.adevinta.leku.LocationPickerActivity
 import com.adevinta.leku.locale.SearchZoneRect
+import com.example.adminuser.models.LocationModel
 import com.example.adminuser.models.Upload
 import com.google.android.gms.maps.model.LatLng
 import com.google.firebase.auth.FirebaseAuth
@@ -33,10 +34,6 @@ class MainActivity : AppCompatActivity() {
     private var imageView: ImageView? = null
     private var progressBar: ProgressBar? = null
     private var mEditTextFileName: EditText? = null
-    private var placePicker: Button? = null
-    private var langlat: TextView? = null
-    private var PLACE_PICKER_REQUEST = 1
-
     private var btnPicklocation: Button? = null
     private var tvMylocation: TextView? = null
     private val PLACE_PICKER_REQUEST2 = 999
@@ -135,6 +132,7 @@ class MainActivity : AppCompatActivity() {
             if (resultCode == Activity.RESULT_OK && data != null) {
                 Log.d("RESULT****", "OK")
                 if (requestCode == PLACE_PICKER_REQUEST2) {
+
                     latitude = data.getDoubleExtra(LATITUDE, 0.0).toString()
                     Log.d("LATITUDE****", latitude.toString())
                     longitude = data.getDoubleExtra(LONGITUDE, 0.0).toString()
@@ -162,12 +160,13 @@ class MainActivity : AppCompatActivity() {
                     longitude,
                     latitude
                 )
-
+                val locationModel = LocationModel(longitude,latitude)
                 val modelId = databaseReference.push().key
 
                 databaseReference.child("Image").child(userid).child(modelId!!)
                     .setValue(model)
                 databaseReference.child("Just Photos").child(modelId).setValue(model)
+                databaseReference.child("Location").child(modelId).child("LatLng").setValue(locationModel)
 
                 progressBar!!.visibility = View.INVISIBLE
                 Toast.makeText(this@MainActivity, "Uploaded Successfully", Toast.LENGTH_SHORT)
