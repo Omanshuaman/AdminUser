@@ -30,7 +30,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     var adapterCard: AdapterCard? = null
     private var mMarkerArray = ArrayList<Marker?>()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -129,9 +128,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-
         })
-
 
         mMap.setOnMarkerClickListener { marker ->
 

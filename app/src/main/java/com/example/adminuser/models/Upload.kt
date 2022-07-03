@@ -5,8 +5,14 @@ class Upload {
     var name: String? = null
     var longitude: String? = null
     var latitude: String? = null
+    var Id: String? = null
 
-    constructor(name: String?, imageUrl: String?, longitude: String?, latitude: String?) {
+
+    constructor(
+        Id: String?,
+        name: String?, imageUrl: String?, longitude: String?, latitude: String?
+    ) {
+        this.Id = Id
         this.imageUrl = imageUrl
         this.name = name
         this.longitude = longitude

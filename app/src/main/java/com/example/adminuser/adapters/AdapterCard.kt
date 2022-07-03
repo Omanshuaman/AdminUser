@@ -1,16 +1,19 @@
 package com.example.adminuser.adapters
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.adminuser.GroupChatActivity
 import com.example.adminuser.R
-import com.example.adminuser.models.TrailModel
+import com.example.adminuser.RecyclerActivity
 import com.example.adminuser.models.Upload
-import com.squareup.picasso.Picasso
+import com.google.firebase.database.FirebaseDatabase
 
 
 class AdapterCard(context: Context, uploads: List<Upload?>?) :
@@ -25,7 +28,6 @@ class AdapterCard(context: Context, uploads: List<Upload?>?) :
 
         init {
             name = itemView.findViewById(R.id.txtPlaceName)
-
         }
     }
 
@@ -39,10 +41,22 @@ class AdapterCard(context: Context, uploads: List<Upload?>?) :
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
         //get data
 
+        val model = mUploads.get(position)
+        val id = model?.Id
+
         val name: String? = mUploads[position]?.name
 
         //set data
         holder.name.text = name
+
+        //handle group click
+        holder.itemView.setOnClickListener {
+            //open group chat
+            //open group chat
+            val intent = Intent(mContext, RecyclerActivity::class.java)
+            intent.putExtra("Id", id)
+            mContext.startActivity(intent)
+        }
 
     }
 

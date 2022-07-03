@@ -152,9 +152,11 @@ class MainActivity : AppCompatActivity() {
                 System.currentTimeMillis()
                     .toString() + "." + getFileExtension(uri)
             )
+        val g_timestamp = "" + System.currentTimeMillis()
+
         fileRef.putFile(uri).addOnSuccessListener {
             fileRef.downloadUrl.addOnSuccessListener { uri1: Uri ->
-                val model = Upload(
+                val model = Upload(g_timestamp,
                     mEditTextFileName!!.text.toString(),
                     uri1.toString(),
                     longitude,
@@ -165,7 +167,7 @@ class MainActivity : AppCompatActivity() {
 
                 databaseReference.child("Image").child(userid).child(modelId!!)
                     .setValue(model)
-                databaseReference.child("Just Photos").child(modelId).setValue(model)
+                databaseReference.child("Just Photos").child(g_timestamp).setValue(model)
                 databaseReference.child("Location").child(modelId).child("LatLng").setValue(locationModel)
 
                 progressBar!!.visibility = View.INVISIBLE
