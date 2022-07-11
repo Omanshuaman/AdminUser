@@ -22,22 +22,15 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 
+@Suppress("DEPRECATION")
 
 class GroupCreateActivity : AppCompatActivity() {
     //permission arrays
     private lateinit var cameraPermissions: Array<String>
     private lateinit var storagePermissions: Array<String>
-
-    //picked image uri
     private var image_uri: Uri? = null
-
-    //actionbar
     private var actionBar: ActionBar? = null
-
-    //firebase auth
     private var firebaseAuth: FirebaseAuth? = null
-
-    //UI views
     private var groupIconIv: ImageView? = null
     private var groupTitleEt: EditText? = null
     private var groupDescriptionEt: EditText? = null

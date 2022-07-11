@@ -8,10 +8,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.fragment.app.FragmentTransaction
-import com.example.adminuser.fragments.HomeFragment
-import com.example.adminuser.fragments.NotificationsFragment
-import com.example.adminuser.fragments.ProfileFragment
-import com.example.adminuser.fragments.UsersFragment
+import com.example.adminuser.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
@@ -73,7 +70,7 @@ class DashboardActivity : AppCompatActivity() {
                     ft3.commit()
                     return@OnNavigationItemSelectedListener true
                 }
-                R.id.nav_more-> {
+                R.id.nav_more -> {
                     showMoreOptions()
                     return@OnNavigationItemSelectedListener true
                 }
@@ -88,6 +85,8 @@ class DashboardActivity : AppCompatActivity() {
         //items to show in menu
         popupMenu?.menu?.add(Menu.NONE, 0, 0, "Notifications")
         popupMenu?.menu?.add(Menu.NONE, 1, 0, "Group Chats")
+        popupMenu?.menu?.add(Menu.NONE, 2, 0, "All Group Chats");
+
 
         //menu clicks
         popupMenu?.setOnMenuItemClickListener { item ->
@@ -110,11 +109,22 @@ class DashboardActivity : AppCompatActivity() {
                 val ft6 = supportFragmentManager.beginTransaction()
                 ft6.replace(R.id.content, fragment6, "")
                 ft6.commit()
+            } else if (id == 2) {
+                //group chats clicked
+
+                //Notifications fragment transaction
+                actionBar?.title = "All Group Chats";//change actionbar title
+                val fragment7 = AllGroupFragment();
+                val ft7 = supportFragmentManager.beginTransaction()
+
+                ft7.replace(R.id.content, fragment7, "");
+                ft7.commit();
             }
             false
         }
         popupMenu?.show()
     }
+
     private fun checkUserStatus() {
         //get current user
         val user = firebaseAuth!!.currentUser

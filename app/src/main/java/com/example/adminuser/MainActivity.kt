@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     private var latitude: String? = null
     private var longitude: String? = null
 
-    val userid = FirebaseAuth.getInstance().currentUser!!.uid
+    private val userid = FirebaseAuth.getInstance().currentUser!!.uid
 
     //vars
     private val databaseReference = FirebaseDatabase.getInstance().reference

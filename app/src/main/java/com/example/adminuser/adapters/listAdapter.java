@@ -40,7 +40,6 @@ public class listAdapter extends RecyclerView.Adapter<listAdapter.MyHolder>{
     public void onBindViewHolder(@NonNull MyHolder holder, int i) {
         //get data
         final String uid = postList.get(i).getId();
-        Log.d("Hello Motherfucker", "onBindViewHolder: " + uid);
         String uBed = postList.get(i).getBed();
         String uBedroom = postList.get(i).getBedroom();
         String uImage = postList.get(i).getImage();

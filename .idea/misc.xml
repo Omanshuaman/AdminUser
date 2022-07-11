@@ -27,7 +27,9 @@
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_show.xml" value="0.22327898550724637" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_sign_in.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/allrow_groupchats_list.xml" value="0.20512820512820512" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/bottom_sheet.xml" value="0.1441523118766999" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_all_group.xml" value="0.20521590423257802" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_group_chats.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/fragment_map.xml" value="0.16" />
@@ -46,7 +48,7 @@
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/row_participant_add.xml" value="0.1" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/layout/test.xml" value="0.2" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/map_options.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/menu.xml" value="0.128" />
         <entry key="..\:/Users/omans/AndroidStudioProjects/AdminUser/app/src/main/res/menu/menu_nav.xml" value="0.2" />
       </map>
     </option>

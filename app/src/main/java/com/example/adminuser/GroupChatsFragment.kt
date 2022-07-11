@@ -50,7 +50,7 @@ class GroupChatsFragment : Fragment() {
                         groupChatLists!!.add(model)
                     }
                 }
-                adapterGroupChatList = AdapterGroupChatList(activity!!, groupChatLists)
+                adapterGroupChatList = AdapterGroupChatList(activity!!, groupChatLists!!)
                 groupsRv!!.adapter = adapterGroupChatList
             }
 
